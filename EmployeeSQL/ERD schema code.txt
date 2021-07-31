@@ -1,0 +1,34 @@
+Employees
+-
+emp_no INTEGER PK
+emp_title_id VARCHAR
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+Titles
+-
+title_id VARCHAR
+title VARCHAR
+
+Salaries
+-
+emp_no INTEGER
+salary INTEGER
+
+Departments
+-
+dept_no VARCHAR
+dept_name VARCHAR
+
+Department_Manager
+-
+dept_no VARCHAR
+emp_no INTEGER
+
+Department_Employee
+-
+emp_no INTEGER
+dept_no VARCHAR
