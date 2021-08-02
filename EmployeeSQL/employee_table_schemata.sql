@@ -4,6 +4,7 @@ DROP TABLE departments;
 DROP TABLE employees;
 DROP TABLE salaries;
 DROP TABLE department_manager;
+DROP TABLE department_employee;
 
 -- Create titles table
 CREATE TABLE IF NOT EXISTS titles (
@@ -17,7 +18,7 @@ CREATE TABLE IF NOT EXISTS departments (
 
 -- Create employees table
 CREATE TABLE IF NOT EXISTS employees (
-	emp_no INTEGER NOT NULL,
+	emp_no VARCHAR(10) NOT NULL,
 	emp_title_id CHAR(10) NOT NULL,
 	birth_date DATE NOT NULL,
 	first_name VARCHAR(50) NOT NULL,
@@ -29,14 +30,14 @@ CREATE TABLE IF NOT EXISTS employees (
 
 --Create salaries table
 CREATE TABLE IF NOT EXISTS salaries (
-	emp_no INTEGER NOT NULL,
+	emp_no VARCHAR(10) NOT NULL,
 	salary INTEGER NOT NULL,
 	PRIMARY KEY (emp_no),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no));
 
 --Create department employee table
 CREATE TABLE IF NOT EXISTS department_employee (
-	emp_no INTEGER NOT NULL,
+	emp_no VARCHAR(10) NOT NULL,
 	dept_no CHAR(10) NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no));
@@ -44,7 +45,7 @@ CREATE TABLE IF NOT EXISTS department_employee (
 --Create department_manager table
 CREATE TABLE IF NOT EXISTS department_manager (
 	dept_no CHAR(10) NOT NULL,
-	emp_no INTEGER NOT NULL PRIMARY KEY,
+	emp_no VARCHAR(10) NOT NULL PRIMARY KEY,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments (dept_no));
 
