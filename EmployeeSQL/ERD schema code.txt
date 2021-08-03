@@ -10,7 +10,7 @@ dept_name VARCHAR(50)
 
 Employees
 -
-emp_no INTEGER PK
+emp_no VARCHAR(10) PK
 emp_title_id CHAR(10) FK >- Titles.title_id
 birth_date DATE
 first_name VARCHAR(50)
@@ -20,15 +20,15 @@ hire_date DATE
 
 Salaries
 -
-emp_no INTEGER PK FK - Employees.emp_no
+emp_no VARCHAR(10) PK FK - Employees.emp_no
 salary INTEGER
 
 Department_Employee
 -
-emp_no INTEGER FK >-< Employees.emp_no
+emp_no VARCHAR(10) FK >-< Employees.emp_no
 dept_no CHAR(10) FK >-< Departments.dept_no
 
 Department_Manager
 -
 dept_no CHAR(10) FK >- Departments.dept_no
-emp_no INTEGER PK FK - Employees.emp_no
+emp_no VARCHAR(10) PK FK - Employees.emp_no
