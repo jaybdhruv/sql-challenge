@@ -103,4 +103,4 @@ ORDER BY COUNT(last_name) DESC;
 SELECT first_name AS "First Name",
 last_name AS "Last Name"
 FROM employees
-WHERE emp_no = '499942';
+WHERE emp_no = 499942;

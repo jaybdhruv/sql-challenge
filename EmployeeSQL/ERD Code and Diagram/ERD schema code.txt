@@ -1,0 +1,35 @@
+Titles
+-
+title_id VARCHAR(10) PK
+title VARCHAR(30)
+
+Departments
+-
+dept_no VARCHAR(10) PK
+dept_name VARCHAR(30)
+
+Employees
+-
+emp_no INTEGER PK
+emp_title_id VARCHAR(10) FK >- Titles.title_id
+birth_date DATE
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+sex VARCHAR(10)
+hire_date DATE
+
+Salaries
+-
+#salary_id INTEGER PK
+emp_no INTEGER PK FK -< Employees.emp_no
+salary INTEGER PK
+
+Department_Employee
+-
+emp_no INTEGER PK FK >-< Employees.emp_no
+dept_no VARCHAR(10) PK FK >- Departments.dept_no
+
+Department_Manager
+-
+dept_no VARCHAR(10) PK FK >- Departments.dept_no
+emp_no INTEGER PK FK >-< Employees.emp_no
