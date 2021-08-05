@@ -20,7 +20,6 @@ hire_date DATE
 
 Salaries
 -
-#salary_id INTEGER PK
 emp_no INTEGER PK FK -< Employees.emp_no
 salary INTEGER PK
 
